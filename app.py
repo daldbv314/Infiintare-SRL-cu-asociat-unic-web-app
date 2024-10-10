@@ -181,11 +181,32 @@ with st.form("Înființare", clear_on_submit=False):
     cod_activ_s20 = col1.text_input('Cod CAEN:', value="", key='cod_activ_s20', label_visibility='collapsed', placeholder='e.g. xxxx', max_chars=4, help='')
     activ_sec20 = col2.text_input('Activitate secundară:', value="", key='activ_sec20', label_visibility='collapsed', placeholder='e.g. xxxxxxxxxxxxxxxxxxxx', max_chars=None, help='')
 
+    st.divider()
 
+    st.subheader('Anexa 1: cerere de înregistrare fiscală')
 
+    col1, col2, col3, col4 = st.columns(4, gap="small")
+    impoz_prof_bool = col1.checkbox("Impozit Profit")
+    impoz_prof_data = col2.date_input('Incepând cu:', datetime.date.today(), key='impoz_prof_data', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
+    per_fisc_i_p = col3.selectbox('Perioada fiscală:', ("Trimestrială", "Anuală"), key='per_fisc_i_p', index=None, help=None)
 
+    st.divider()
 
+    col1, col2, col3, col4 = st.columns(4, gap="small")
+    impoz_venit_m_bool = col1.checkbox("Impozit venit micro")
+    impoz_venit_m_data = col2.date_input('Incepând cu:', datetime.date.today(), key='impoz_venit_m_data', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
 
+    st.divider()
 
+    col1, col2, col3, col4 = st.columns(4, gap="small")
+    tva_bool = col1.checkbox("TVA")
+    c_a_est = col2.number_input('Cifra de afaceri estimată:', key='c_a_est', min_value=0, label_visibility="visible", help='în LEI')
+    col1, col2, col3, col4 = st.columns(4, gap="small")
+    scop_tva_bool = col1.checkbox("Înregistrare în scopuri de TVA")
+    reg_norm_tva_bool = col2.checkbox("Aplicarea regimului normal de TVA")
+    per_fisc_tva = col3.selectbox('Perioada fiscală:', ("Lunară", "Trimestrală"), key='per_fisc_tva', index=None, help=None)
 
+    st.divider()
 
+    st.write(' ')
+    submitted = st.form_submit_button("Pas 1: Crează documentele", type="primary")
