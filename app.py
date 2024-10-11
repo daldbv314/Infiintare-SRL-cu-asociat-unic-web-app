@@ -27,6 +27,250 @@ st.title('Creează actele pentru înființare SRL cu asociat unic:')
     #             """
     # st.markdown(hide_st_style, unsafe_allow_html=True)
 
+
+
+def var_dictionary():
+    var_dict = {
+        'as1_nume': as1_nume,
+        'as1_prenume': as1_prenume,
+        'as1_cetatean': as1_cetatean,
+        'as1_data_n': as1_data_n,
+        'as1_loc_n': as1_loc_n,
+        'as1_jud_n': as1_jud_n,
+        'as1_tara_n': as1_tara_n,
+        'as1_loc_dom': as1_loc_dom,
+        'as1_str_dom': as1_str_dom,
+        'as1_nr_dom': as1_nr_dom,
+        'as1_bl_dom': as1_bl_dom,
+        'as1_sc_dom': as1_sc_dom,
+        'as1_et_dom': as1_et_dom,
+        'as1_ap_dom': as1_ap_dom,
+        'as1_jud_dom': as1_jud_dom,
+        'as1_tara_dom': as1_tara_dom,
+        'as1_cnp': as1_cnp,
+        'as1_tip_act': as1_tip_act,
+        'as1_serie_act': as1_serie_act,
+        'as1_nr_act': as1_nr_act,
+        'as1_act_elib_d': as1_act_elib_d,
+        'as1_data_elib': as1_data_elib,
+        'as1_data_exp': as1_data_exp,
+        'companie': companie,
+        'rez_denum': rez_denum,
+        'loc_sed': loc_sed,
+        'str_sed': str_sed,
+        'nr_sed': nr_sed,
+        'bl_sed': bl_sed,
+        'sc_sed': sc_sed,
+        'et_sed': et_sed,
+        'ap_sed': ap_sed,
+        'cam_sed': cam_sed,
+        'jud_sed': jud_sed,
+        'tara_sed': tara_sed,
+        'cap_soc': cap_soc,
+        'ap_num': ap_num,
+        'parti_soc': parti_soc,
+        'val_nom': val_nom,
+        'data_semn_z1': data_semn_z1,
+        'data_semn_z2': data_semn_z2,
+        'data_semn_l1': data_semn_l1,
+        'data_semn_l2': data_semn_l2,
+        'data_semn_a1': data_semn_a1,
+        'data_semn_a2': data_semn_a2,
+        'data_semn_a3': data_semn_a3,
+        'data_semn_a4': data_semn_a4,
+        'nr_contr': nr_contr,
+        'per_comod': per_comod,
+        'cal_subsemn': cal_subsemn,
+        'jud_trib': jud_trib,
+        'cod_caen': cod_caen,
+        'dom_activ': dom_activ,
+        'cod_activ_p': cod_activ_p,
+        'activ_princip': activ_princip,
+        'cod_activ_s1': cod_activ_s1,
+        'activ_sec1': activ_sec1,
+        'cod_activ_s2': cod_activ_s2,
+        'activ_sec2': activ_sec2,
+        'cod_activ_s3': cod_activ_s3,
+        'activ_sec3': activ_sec3,
+        'cod_activ_s4': cod_activ_s4,
+        'activ_sec4': activ_sec4,
+        'cod_activ_s5': cod_activ_s5,
+        'activ_sec5': activ_sec5,
+        'cod_activ_s6': cod_activ_s6,
+        'activ_sec6': activ_sec6,
+        'cod_activ_s7': cod_activ_s7,
+        'activ_sec7': activ_sec7,
+        'cod_activ_s8': cod_activ_s8,
+        'activ_sec8': activ_sec8,
+        'cod_activ_s9': cod_activ_s9,
+        'activ_sec9': activ_sec9,
+        'cod_activ_s10': cod_activ_s10,
+        'activ_sec10': activ_sec10,
+        'cod_activ_s11': cod_activ_s11,
+        'activ_sec11': activ_sec11,
+        'cod_activ_s12': cod_activ_s12,
+        'activ_sec12': activ_sec12,
+        'cod_activ_s13': cod_activ_s13,
+        'activ_sec13': activ_sec13,
+        'cod_activ_s14': cod_activ_s14,
+        'activ_sec14': activ_sec14,
+        'cod_activ_s15': cod_activ_s15,
+        'activ_sec15': activ_sec15,
+        'cod_activ_s16': cod_activ_s16,
+        'activ_sec16': activ_sec16,
+        'cod_activ_s17': cod_activ_s17,
+        'activ_sec17': activ_sec17,
+        'cod_activ_s18': cod_activ_s18,
+        'activ_sec18': activ_sec18,
+        'cod_activ_s19': cod_activ_s19,
+        'activ_sec19': activ_sec19,
+        'cod_activ_s20': cod_activ_s20,
+        'activ_sec20': activ_sec20,
+        'impoz_prof': impoz_prof,
+        'impoz_prof_data_z1': impoz_prof_data_z1,
+        'impoz_prof_data_z2': impoz_prof_data_z2,
+        'impoz_prof_data_l1': impoz_prof_data_l1,
+        'impoz_prof_data_l2': impoz_prof_data_l2,
+        'impoz_prof_data_a1': impoz_prof_data_a1,
+        'impoz_prof_data_a2': impoz_prof_data_a2,
+        'impoz_prof_data_a3': impoz_prof_data_a3,
+        'impoz_prof_data_a4': impoz_prof_data_a4,
+        'per_fisc_i_p': per_fisc_i_p,
+        'impoz_venit_m': impoz_venit_m,
+        'impoz_venit_m_data_z1': impoz_venit_m_data_z1,
+        'impoz_venit_m_data_z2': impoz_venit_m_data_z2,
+        'impoz_venit_m_data_l1': impoz_venit_m_data_l1,
+        'impoz_venit_m_data_l2': impoz_venit_m_data_l2,
+        'impoz_venit_m_data_a1': impoz_venit_m_data_a1,
+        'impoz_venit_m_data_a2': impoz_venit_m_data_a2,
+        'impoz_venit_m_data_a3': impoz_venit_m_data_a3,
+        'impoz_venit_m_data_a4': impoz_venit_m_data_a4,
+        'tva': tva,
+        'c_a_est_1': c_a_est_1,
+        'c_a_est_2': c_a_est_2,
+        'c_a_est_3': c_a_est_3,
+        'c_a_est_4': c_a_est_4,
+        'c_a_est_5': c_a_est_5,
+        'c_a_est_6': c_a_est_6,
+        'c_a_est_7': c_a_est_7,
+        'c_a_est_8': c_a_est_8,
+        'scop_tva': scop_tva,
+        'reg_norm_tva': reg_norm_tva,
+        'per_fisc_tva': per_fisc_tva
+        
+    }    
+
+def doc01():
+    doc01_path = Path.cwd() / "Templates" / "01-Act-constitutiv-(asociat-unic)-template.docx"
+    doc01_doc = DocxTemplate(doc01_path)
+    context = var_dictionary()
+    doc01_doc.render(context)
+    doc01_bytes = BytesIO()
+    doc01_doc.save(doc01_bytes)
+    return doc01_bytes.getvalue()
+
+def doc02():
+    doc02_path = Path.cwd() / "Templates" / "02-Contract-comodat-sediu-social(asociat-unic)-template.docx"
+    doc02_doc = DocxTemplate(doc02_path)
+    context = var_dictionary()
+    doc02_doc.render(context)
+    doc02_bytes = BytesIO()
+    doc02_doc.save(doc02_bytes)
+    return doc02_bytes.getvalue()
+
+def doc03():
+    doc03_path = Path.cwd() / "Templates" / "03-Declaratie-sediu-social-template.docx"
+    doc03_doc = DocxTemplate(doc03_path)
+    context = var_dictionary()
+    doc03_doc.render(context)
+    doc03_bytes = BytesIO()
+    doc03_doc.save(doc03_bytes)
+    return doc03_bytes.getvalue()
+
+def doc04():
+    doc04_path = Path.cwd() / "Templates" / "04-Act-constitutiv-(asociat-unic)-template.docx"
+    doc04_doc = DocxTemplate(doc04_path)
+    context = var_dictionary()
+    doc04_doc.render(context)
+    doc04_bytes = BytesIO()
+    doc04_doc.save(doc04_bytes)
+    return doc04_bytes.getvalue()
+
+def doc05():
+    doc05_path = Path.cwd() / "Templates" / "05-anexa_1_inregistrare_fiscala-template.docx"
+    doc05_doc = DocxTemplate(doc05_path)
+    context = var_dictionary()
+    doc05_doc.render(context)
+    doc05_bytes = BytesIO()
+    doc05_doc.save(doc05_bytes)
+    return doc05_bytes.getvalue()
+
+def doc06():
+    doc06_path = Path.cwd() / "Templates" / "06-anexa_2_investitie_straina.docx"
+    doc06_doc = DocxTemplate(doc06_path)
+    context = var_dictionary()
+    doc06_doc.render(context)
+    doc06_bytes = BytesIO()
+    doc06_doc.save(doc06_bytes)
+    return doc06_bytes.getvalue()
+
+def doc07():
+    doc07_path = Path.cwd() / "Templates" / "07-Contract-comodat-sediu-social(asociat-unic)-template.docx"
+    doc07_doc = DocxTemplate(doc07_path)
+    context = var_dictionary()
+    doc07_doc.render(context)
+    doc07_bytes = BytesIO()
+    doc07_doc.save(doc07_bytes)
+    return doc07_bytes.getvalue()
+
+def doc08():
+    doc08_path = Path.cwd() / "Templates" / "08-declaratie-indeplinire-conditii-functionare-template.docx"
+    doc08_doc = DocxTemplate(doc08_path)
+    context = var_dictionary()
+    doc08_doc.render(context)
+    doc08_bytes = BytesIO()
+    doc08_doc.save(doc08_bytes)
+    return doc08_bytes.getvalue()
+
+def doc09():
+    doc09_path = Path.cwd() / "Templates" / "09-Declaratie-sediu-social-template.docx"
+    doc09_doc = DocxTemplate(doc09_path)
+    context = var_dictionary()
+    doc09_doc.render(context)
+    doc09_bytes = BytesIO()
+    doc09_doc.save(doc09_bytes)
+    return doc09_bytes.getvalue()
+
+def create_zip_archive():
+    # Generate the content for each document
+    doc01_content = doc01()
+    doc02_content = doc02()
+    doc03_content = doc03()
+    doc04_content = doc04()
+    doc05_content = doc05()
+    doc06_content = doc06()
+    doc07_content = doc07()
+    doc08_content = doc08()
+    doc09_content = doc09()
+
+    # Create an in-memory zip file
+    with io.BytesIO() as zip_buffer:
+        with ZipFile(zip_buffer, 'w') as zipf:
+            # Add each doc to the archive
+            zipf.writestr(f"{companie}-01-acord-confidentialitate.docx", doc01_content)
+            zipf.writestr(f"{companie}-02-contract-comodat-sediu-social.docx", doc02_content)
+            zipf.writestr(f"{companie}-03-declaratie-sediu-social.docx", doc03_content)
+            zipf.writestr(f"{companie}-04-act-constitutiv.docx", doc04_content)
+            zipf.writestr(f"{companie}-05-anexa_1_inregistrare_fiscala.docx", doc05_content)
+            zipf.writestr(f"{companie}-06-anexa_2_investitie_straina.docx", doc06_content)
+            zipf.writestr(f"{companie}-07-contract-comodat-sediu-social.docx", doc07_content)
+            zipf.writestr(f"{companie}-08-declaratie-indeplinire-conditii-functionare.docx", doc08_content)
+            zipf.writestr(f"{companie}-09-declaratie-sediu-social.docx", doc09_content)
+        # Get the zip archive content as bytes
+        zip_bytes = zip_buffer.getvalue()
+    return zip_bytes
+
+
 with st.form("Înființare", clear_on_submit=False):
         
     st.subheader('Act constitutiv:')
@@ -210,3 +454,75 @@ with st.form("Înființare", clear_on_submit=False):
 
     st.write(' ')
     submitted = st.form_submit_button("Pas 1: Crează documentele", type="primary")
+
+if submitted:
+        with st.spinner("Se generează documentele..."):
+            clean_data_semn = data_semn.replace('.', '')
+            data_semn_z1 = clean_data_semn[0]
+            data_semn_z2 = clean_data_semn[1]
+            data_semn_l1 = clean_data_semn[2]
+            data_semn_l2 = clean_data_semn[3]
+            data_semn_a1 = clean_data_semn[4]
+            data_semn_a2 = clean_data_semn[5]
+            data_semn_a3 = clean_data_semn[6]
+            data_semn_a4 = clean_data_semn[7]
+
+            if impoz_prof_bool:
+                impoz_prof = 'X'
+            else:
+                impoz_prof = ''
+            
+            clean_impoz_prof_data = impoz_prof_data.replace('.', '')
+            impoz_prof_data_z1 = clean_impoz_prof_data[0]
+            impoz_prof_data_z2 = clean_impoz_prof_data[1]
+            impoz_prof_data_l1 = clean_impoz_prof_data[2]
+            impoz_prof_data_l2 = clean_impoz_prof_data[3]
+            impoz_prof_data_a1 = clean_impoz_prof_data[4]
+            impoz_prof_data_a2 = clean_impoz_prof_data[5]
+            impoz_prof_data_a3 = clean_impoz_prof_data[6]
+            impoz_prof_data_a4 = clean_impoz_prof_data[7]
+
+            if impoz_venit_m_bool:
+                impoz_venit_m = 'X'
+            else:
+                impoz_venit_m = ''
+
+            clean_impoz_venit_m_data = impoz_venit_m_data.replace('.', '')
+            impoz_venit_m_data_z1 = clean_impoz_venit_m_data[0]
+            impoz_venit_m_data_z2 = clean_impoz_venit_m_data[1]
+            impoz_venit_m_data_l1 = clean_impoz_venit_m_data[2]
+            impoz_venit_m_data_l2 = clean_impoz_venit_m_data[3]
+            impoz_venit_m_data_a1 = clean_impoz_venit_m_data[4]
+            impoz_venit_m_data_a2 = clean_impoz_venit_m_data[5]
+            impoz_venit_m_data_a3 = clean_impoz_venit_m_data[6]
+            impoz_venit_m_data_a4 = clean_impoz_venit_m_data[7]
+
+            if tva_bool:
+                tva = 'X'
+            else:
+                tva = ''
+
+            c_a_est_1 = c_a_est[-1]
+            c_a_est_2 = c_a_est[-2]
+            c_a_est_3 = c_a_est[-3]
+            c_a_est_4 = c_a_est[-4]
+            c_a_est_5 = c_a_est[-5]
+            c_a_est_6 = c_a_est[-6]
+            c_a_est_7 = c_a_est[-7]
+            c_a_est_8 = c_a_est[-8]
+
+            if scop_tva_bool:
+                scop_tva = 'X'
+            else:
+                scop_tva = ''
+
+            if reg_norm_tva_bool:
+                reg_norm_tva = 'X'
+            else:
+                reg_norm_tva = ''
+            
+            zip_archive = create_zip_archive()
+        st.success("Succes! Documentele pot fi descărcate acum de mai jos!")
+        st.download_button(label="Pas 2: Downloadează", data=zip_archive, file_name=f"{companie}-acte-înființare-SRL-{datetime.date.today()}.zip", mime="docx", type="primary")
+
+
