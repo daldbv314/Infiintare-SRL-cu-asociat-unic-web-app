@@ -161,7 +161,7 @@ def var_dictionary():
     }    
 
 def doc01():
-    doc01_path = Path.cwd() / "Templates" / "01-Act-constitutiv-(asociat-unic)-template.docx"
+    doc01_path = Path.cwd() / "Templates" / "01-Act-constitutiv-(asociat-unic)-template-v2.docx"
     doc01_doc = DocxTemplate(doc01_path)
     context = var_dictionary()
     doc01_doc.render(context)
@@ -170,7 +170,7 @@ def doc01():
     return doc01_bytes.getvalue()
 
 def doc02():
-    doc02_path = Path.cwd() / "Templates" / "02-Contract-comodat-sediu-social(asociat-unic)-template.docx"
+    doc02_path = Path.cwd() / "Templates" / "02-Anexa_1_inregistrare_fiscala-template-v2.docx"
     doc02_doc = DocxTemplate(doc02_path)
     context = var_dictionary()
     doc02_doc.render(context)
@@ -179,7 +179,7 @@ def doc02():
     return doc02_bytes.getvalue()
 
 def doc03():
-    doc03_path = Path.cwd() / "Templates" / "03-Declaratie-sediu-social-template.docx"
+    doc03_path = Path.cwd() / "Templates" / "03-Anexa_2_investitie_straina-v2.docx"
     doc03_doc = DocxTemplate(doc03_path)
     context = var_dictionary()
     doc03_doc.render(context)
@@ -188,7 +188,7 @@ def doc03():
     return doc03_bytes.getvalue()
 
 def doc04():
-    doc04_path = Path.cwd() / "Templates" / "04-Act-constitutiv-(asociat-unic)-template.docx"
+    doc04_path = Path.cwd() / "Templates" / "04-Contract-comodat-sediu-social(asociat-unic)-template-v2.docx"
     doc04_doc = DocxTemplate(doc04_path)
     context = var_dictionary()
     doc04_doc.render(context)
@@ -197,7 +197,7 @@ def doc04():
     return doc04_bytes.getvalue()
 
 def doc05():
-    doc05_path = Path.cwd() / "Templates" / "05-anexa_1_inregistrare_fiscala-template.docx"
+    doc05_path = Path.cwd() / "Templates" / "05-Declaratie-indeplinire-conditii-functionare-template-v2.docx"
     doc05_doc = DocxTemplate(doc05_path)
     context = var_dictionary()
     doc05_doc.render(context)
@@ -206,40 +206,13 @@ def doc05():
     return doc05_bytes.getvalue()
 
 def doc06():
-    doc06_path = Path.cwd() / "Templates" / "06-anexa_2_investitie_straina.docx"
+    doc06_path = Path.cwd() / "Templates" / "06-Declaratie-sediu-social-template-v2.docx"
     doc06_doc = DocxTemplate(doc06_path)
     context = var_dictionary()
     doc06_doc.render(context)
     doc06_bytes = BytesIO()
     doc06_doc.save(doc06_bytes)
     return doc06_bytes.getvalue()
-
-def doc07():
-    doc07_path = Path.cwd() / "Templates" / "07-Contract-comodat-sediu-social(asociat-unic)-template.docx"
-    doc07_doc = DocxTemplate(doc07_path)
-    context = var_dictionary()
-    doc07_doc.render(context)
-    doc07_bytes = BytesIO()
-    doc07_doc.save(doc07_bytes)
-    return doc07_bytes.getvalue()
-
-def doc08():
-    doc08_path = Path.cwd() / "Templates" / "08-declaratie-indeplinire-conditii-functionare-template.docx"
-    doc08_doc = DocxTemplate(doc08_path)
-    context = var_dictionary()
-    doc08_doc.render(context)
-    doc08_bytes = BytesIO()
-    doc08_doc.save(doc08_bytes)
-    return doc08_bytes.getvalue()
-
-def doc09():
-    doc09_path = Path.cwd() / "Templates" / "09-Declaratie-sediu-social-template.docx"
-    doc09_doc = DocxTemplate(doc09_path)
-    context = var_dictionary()
-    doc09_doc.render(context)
-    doc09_bytes = BytesIO()
-    doc09_doc.save(doc09_bytes)
-    return doc09_bytes.getvalue()
 
 def create_zip_archive():
     # Generate the content for each document
@@ -249,24 +222,19 @@ def create_zip_archive():
     doc04_content = doc04()
     doc05_content = doc05()
     doc06_content = doc06()
-    doc07_content = doc07()
-    doc08_content = doc08()
-    doc09_content = doc09()
+
 
     # Create an in-memory zip file
     with io.BytesIO() as zip_buffer:
         with ZipFile(zip_buffer, 'w') as zipf:
             # Add each doc to the archive
-            zipf.writestr(f"{companie}-01-acord-confidentialitate.docx", doc01_content)
-            zipf.writestr(f"{companie}-02-contract-comodat-sediu-social.docx", doc02_content)
-            zipf.writestr(f"{companie}-03-declaratie-sediu-social.docx", doc03_content)
-            zipf.writestr(f"{companie}-04-act-constitutiv.docx", doc04_content)
-            zipf.writestr(f"{companie}-05-anexa_1_inregistrare_fiscala.docx", doc05_content)
-            zipf.writestr(f"{companie}-06-anexa_2_investitie_straina.docx", doc06_content)
-            zipf.writestr(f"{companie}-07-contract-comodat-sediu-social.docx", doc07_content)
-            zipf.writestr(f"{companie}-08-declaratie-indeplinire-conditii-functionare.docx", doc08_content)
-            zipf.writestr(f"{companie}-09-declaratie-sediu-social.docx", doc09_content)
-        # Get the zip archive content as bytes
+            zipf.writestr(f"{companie}-01-Act-constitutiv-(asociat-unic)-template-v2.docx", doc01_content)
+            zipf.writestr(f"{companie}-02-Anexa_1_inregistrare_fiscala-template-v2.docx", doc02_content)
+            zipf.writestr(f"{companie}-03-Anexa_2_investitie_straina-v2.docx", doc03_content)
+            zipf.writestr(f"{companie}-04-Contract-comodat-sediu-social(asociat-unic)-template-v2.docx", doc04_content)
+            zipf.writestr(f"{companie}-05-Declaratie-indeplinire-conditii-functionare-template-v2.docx", doc05_content)
+            zipf.writestr(f"{companie}-06-Declaratie-sediu-social-template-v2.docx", doc06_content)
+            # Get the zip archive content as bytes
         zip_bytes = zip_buffer.getvalue()
     return zip_bytes
 
