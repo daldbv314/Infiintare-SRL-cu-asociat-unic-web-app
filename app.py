@@ -70,14 +70,15 @@ def var_dictionary():
         'ap_num': ap_num,
         'parti_soc': parti_soc,
         'val_nom': val_nom,
-        'data_semn_z1': data_semn_z1,
-        'data_semn_z2': data_semn_z2,
-        'data_semn_l1': data_semn_l1,
-        'data_semn_l2': data_semn_l2,
-        'data_semn_a1': data_semn_a1,
-        'data_semn_a2': data_semn_a2,
-        'data_semn_a3': data_semn_a3,
-        'data_semn_a4': data_semn_a4,
+        'data_semn': data_semn,
+        'dsz1': dsz1,
+        'dsz2': dsz2,
+        'dsl1': dsl1,
+        'dsl2': dsl2,
+        'dsa1': dsa1,
+        'dsa2': dsa2,
+        'dsa3': dsa3,
+        'dsa4': dsa4,
         'nr_contr': nr_contr,
         'per_comod': per_comod,
         'cal_subsemn': cal_subsemn,
@@ -127,33 +128,33 @@ def var_dictionary():
         'cod_activ_s20': cod_activ_s20,
         'activ_sec20': activ_sec20,
         'impoz_prof': impoz_prof,
-        'impoz_prof_data_z1': impoz_prof_data_z1,
-        'impoz_prof_data_z2': impoz_prof_data_z2,
-        'impoz_prof_data_l1': impoz_prof_data_l1,
-        'impoz_prof_data_l2': impoz_prof_data_l2,
-        'impoz_prof_data_a1': impoz_prof_data_a1,
-        'impoz_prof_data_a2': impoz_prof_data_a2,
-        'impoz_prof_data_a3': impoz_prof_data_a3,
-        'impoz_prof_data_a4': impoz_prof_data_a4,
+        'ipz1': ipz1,
+        'ipz2': ipz2,
+        'ipl1': ipl1,
+        'ipl2': ipl2,
+        'ipa1': ipa1,
+        'ipa2': ipa2,
+        'ipa3': ipa3,
+        'ipa4': ipa4,
         'per_fisc_i_p': per_fisc_i_p,
         'impoz_venit_m': impoz_venit_m,
-        'impoz_venit_m_data_z1': impoz_venit_m_data_z1,
-        'impoz_venit_m_data_z2': impoz_venit_m_data_z2,
-        'impoz_venit_m_data_l1': impoz_venit_m_data_l1,
-        'impoz_venit_m_data_l2': impoz_venit_m_data_l2,
-        'impoz_venit_m_data_a1': impoz_venit_m_data_a1,
-        'impoz_venit_m_data_a2': impoz_venit_m_data_a2,
-        'impoz_venit_m_data_a3': impoz_venit_m_data_a3,
-        'impoz_venit_m_data_a4': impoz_venit_m_data_a4,
+        'ivz1': ivz1,
+        'ivz2': ivz2,
+        'ivl1': ivl1,
+        'ivl2': ivl2,
+        'iva1': iva1,
+        'iva2': iva2,
+        'iva3': iva3,
+        'iva4': iva4,
         'tva': tva,
-        'c_a_est_1': c_a_est_1,
-        'c_a_est_2': c_a_est_2,
-        'c_a_est_3': c_a_est_3,
-        'c_a_est_4': c_a_est_4,
-        'c_a_est_5': c_a_est_5,
-        'c_a_est_6': c_a_est_6,
-        'c_a_est_7': c_a_est_7,
-        'c_a_est_8': c_a_est_8,
+        'cae1': cae1,
+        'cae2': cae2,
+        'cae3': cae3,
+        'cae4': cae4,
+        'cae5': cae5,
+        'cae6': cae6,
+        'cae7': cae7,
+        'cae8': cae8,
         'scop_tva': scop_tva,
         'reg_norm_tva': reg_norm_tva,
         'per_fisc_tva': per_fisc_tva
@@ -426,14 +427,14 @@ with st.form("Înființare", clear_on_submit=False):
 if submitted:
         with st.spinner("Se generează documentele..."):
             clean_data_semn = data_semn.replace('.', '')
-            data_semn_z1 = clean_data_semn[0]
-            data_semn_z2 = clean_data_semn[1]
-            data_semn_l1 = clean_data_semn[2]
-            data_semn_l2 = clean_data_semn[3]
-            data_semn_a1 = clean_data_semn[4]
-            data_semn_a2 = clean_data_semn[5]
-            data_semn_a3 = clean_data_semn[6]
-            data_semn_a4 = clean_data_semn[7]
+            dsz1 = clean_data_semn[0]
+            dsz2 = clean_data_semn[1]
+            dsl1 = clean_data_semn[2]
+            dsl2 = clean_data_semn[3]
+            dsa1 = clean_data_semn[4]
+            dsa2 = clean_data_semn[5]
+            dsa3 = clean_data_semn[6]
+            dsa4 = clean_data_semn[7]
 
             if impoz_prof_bool:
                 impoz_prof = 'X'
@@ -441,14 +442,14 @@ if submitted:
                 impoz_prof = ''
             
             clean_impoz_prof_data = impoz_prof_data.replace('.', '')
-            impoz_prof_data_z1 = clean_impoz_prof_data[0]
-            impoz_prof_data_z2 = clean_impoz_prof_data[1]
-            impoz_prof_data_l1 = clean_impoz_prof_data[2]
-            impoz_prof_data_l2 = clean_impoz_prof_data[3]
-            impoz_prof_data_a1 = clean_impoz_prof_data[4]
-            impoz_prof_data_a2 = clean_impoz_prof_data[5]
-            impoz_prof_data_a3 = clean_impoz_prof_data[6]
-            impoz_prof_data_a4 = clean_impoz_prof_data[7]
+            ipz1 = clean_impoz_prof_data[0]
+            ipz2 = clean_impoz_prof_data[1]
+            ipl1 = clean_impoz_prof_data[2]
+            ipl2 = clean_impoz_prof_data[3]
+            ipa1 = clean_impoz_prof_data[4]
+            ipa2 = clean_impoz_prof_data[5]
+            ipa3 = clean_impoz_prof_data[6]
+            ipa4 = clean_impoz_prof_data[7]
 
             if impoz_venit_m_bool:
                 impoz_venit_m = 'X'
@@ -456,28 +457,28 @@ if submitted:
                 impoz_venit_m = ''
 
             clean_impoz_venit_m_data = impoz_venit_m_data.replace('.', '')
-            impoz_venit_m_data_z1 = clean_impoz_venit_m_data[0]
-            impoz_venit_m_data_z2 = clean_impoz_venit_m_data[1]
-            impoz_venit_m_data_l1 = clean_impoz_venit_m_data[2]
-            impoz_venit_m_data_l2 = clean_impoz_venit_m_data[3]
-            impoz_venit_m_data_a1 = clean_impoz_venit_m_data[4]
-            impoz_venit_m_data_a2 = clean_impoz_venit_m_data[5]
-            impoz_venit_m_data_a3 = clean_impoz_venit_m_data[6]
-            impoz_venit_m_data_a4 = clean_impoz_venit_m_data[7]
+            ivz1 = clean_impoz_venit_m_data[0]
+            ivz2 = clean_impoz_venit_m_data[1]
+            ivl1 = clean_impoz_venit_m_data[2]
+            ivl2 = clean_impoz_venit_m_data[3]
+            iva1 = clean_impoz_venit_m_data[4]
+            iva2 = clean_impoz_venit_m_data[5]
+            iva3 = clean_impoz_venit_m_data[6]
+            iva4 = clean_impoz_venit_m_data[7]
 
             if tva_bool:
                 tva = 'X'
             else:
                 tva = ''
 
-            c_a_est_1 = c_a_est[-1]
-            c_a_est_2 = c_a_est[-2]
-            c_a_est_3 = c_a_est[-3]
-            c_a_est_4 = c_a_est[-4]
-            c_a_est_5 = c_a_est[-5]
-            c_a_est_6 = c_a_est[-6]
-            c_a_est_7 = c_a_est[-7]
-            c_a_est_8 = c_a_est[-8]
+            cae1 = c_a_est[-1]
+            cae2 = c_a_est[-2]
+            cae3 = c_a_est[-3]
+            cae4 = c_a_est[-4]
+            cae5 = c_a_est[-5]
+            cae6 = c_a_est[-6]
+            cae7 = c_a_est[-7]
+            cae8 = c_a_est[-8]
 
             if scop_tva_bool:
                 scop_tva = 'X'
