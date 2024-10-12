@@ -137,6 +137,8 @@ def var_dictionary():
         'ipa3': ipa3,
         'ipa4': ipa4,
         'per_fisc_i_p': per_fisc_i_p,
+        'pfipT': pfipT,
+        'pfipA': pfipA,
         'impoz_venit_m': impoz_venit_m,
         'ivz1': ivz1,
         'ivz2': ivz2,
@@ -157,7 +159,9 @@ def var_dictionary():
         'cae8': cae8,
         'scop_tva': scop_tva,
         'reg_norm_tva': reg_norm_tva,
-        'per_fisc_tva': per_fisc_tva
+        'per_fisc_tva': per_fisc_tva,
+        'pftL': pftL,
+        'pftT': pftT
         
     }    
 
@@ -451,6 +455,16 @@ if submitted:
             ipa3 = clean_impoz_prof_data[6]
             ipa4 = clean_impoz_prof_data[7]
 
+            if per_fisc_i_p == 'Trimestrială':
+                pfipT = 'X'
+            else:
+                pfipT = ''
+            if per_fisc_i_p == 'Anuală':
+                pfipA = 'X'
+            else:
+                pfipA = ''            
+
+
             if impoz_venit_m_bool:
                 impoz_venit_m = 'X'
             else:
@@ -489,6 +503,16 @@ if submitted:
                 reg_norm_tva = 'X'
             else:
                 reg_norm_tva = ''
+
+            if per_fisc_tva == 'Lunară':
+                pftL = 'X'
+            else:
+                pftL = ''
+
+            if per_fisc_tva == 'Trimestrală':
+                pftT = 'X'
+            else:
+                pftT = ''
             
             zip_archive = create_zip_archive()
         st.success("Succes! Documentele pot fi descărcate acum de mai jos!")
