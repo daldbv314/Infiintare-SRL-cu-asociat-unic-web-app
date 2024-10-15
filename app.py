@@ -257,7 +257,8 @@ with st.form("Înființare", clear_on_submit=False):
     as1_nume = col1.text_input('Nume Asociat:', value="", key='as1_nume', placeholder='e.g. Popescu', max_chars=None)
     as1_prenume = col2.text_input('Prenume Asociat:', value="", key='as1_prenume', placeholder='e.g. Popescu', max_chars=None)
     as1_cetatean = col3.text_input('Cetațean:', value="român", key='as1_cetatean', placeholder='e.g. român')
-    as1_data_n = col4.date_input('Data naștere:', datetime.date.today(), key='as1_data_n', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
+    as1_data_n_tmp = col4.date_input('Data naștere:', datetime.date.today(), key='as1_data_n_tmp', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
+    as1_data_n = as1_data_n_tmp.strftime("%d.%m.%Y")
     col1, col2, col3, col4 = st.columns(4, gap="small")
     as1_loc_n = col1.text_input('Localitate naștere:', value="", key='as1_loc_n', placeholder='e.g. BRAȘOV', max_chars=None)
     as1_jud_n = col2.text_input('Județ/sector naștere:', value="", key='as1_jud_n', placeholder='e.g. BRAȘOV', max_chars=None)
@@ -282,8 +283,10 @@ with st.form("Înființare", clear_on_submit=False):
     as1_serie_act = col3.text_input('Serie:', value="", key='as1_serie_act', placeholder='', max_chars=None)
     as1_nr_act = col4.text_input('Nr.:', value="", key='as1_nr_act', placeholder='', max_chars=None)
     as1_act_elib_d = col5.text_input('Eliberat de:', value="", key='as1_act_elib_d', placeholder='e.g. SPCLEP BRAȘOV', max_chars=None)
-    as1_data_elib = col6.date_input('Data eliberare:', datetime.date.today(), key='as1_data_elib', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
-    as1_data_exp = col7.date_input('Data expirare:', datetime.date.today(), key='as1_data_exp', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
+    as1_data_elib_tmp = col6.date_input('Data eliberare:', datetime.date.today(), key='as1_data_elib_tmp', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
+    as1_data_elib = as1_data_elib_tmp.strftime("%d.%m.%Y")
+    as1_data_exp_tmp = col7.date_input('Data expirare:', datetime.date.today(), key='as1_data_exp_tmp', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
+    as1_data_exp = as1_data_exp_tmp.strftime("%d.%m.%Y")
 
     st.divider()
 
@@ -316,7 +319,8 @@ with st.form("Înființare", clear_on_submit=False):
     st.divider()
 
     col1, col2, col3, col4 = st.columns(4, gap="small")
-    data_semn = col1.date_input('Data semnare:', datetime.date.today(), key='data_semn', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
+    data_semn_tmp = col1.date_input('Data semnare:', datetime.date.today(), key='data_semn_tmp', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
+    data_semn = data_semn_tmp.strftime("%d.%m.%Y")
 
     st.divider()
 
@@ -410,14 +414,16 @@ with st.form("Înființare", clear_on_submit=False):
 
     col1, col2, col3, col4 = st.columns(4, gap="small")
     impoz_prof_bool = col1.checkbox("Impozit Profit")
-    impoz_prof_data = col2.date_input('Incepând cu:', datetime.date.today(), key='impoz_prof_data', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
+    impoz_prof_data_tmp = col2.date_input('Incepând cu:', datetime.date.today(), key='impoz_prof_data_tmp', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
+    impoz_prof_data = impoz_prof_data_tmp.strftime("%d.%m.%Y")
     per_fisc_i_p = col3.selectbox('Perioada fiscală:', ("Trimestrială", "Anuală"), key='per_fisc_i_p', index=None, help=None)
 
     st.divider()
 
     col1, col2, col3, col4 = st.columns(4, gap="small")
     impoz_venit_m_bool = col1.checkbox("Impozit venit micro")
-    impoz_venit_m_data = col2.date_input('Incepând cu:', datetime.date.today(), key='impoz_venit_m_data', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
+    impoz_venit_m_data_tmp = col2.date_input('Incepând cu:', datetime.date.today(), key='impoz_venit_m_data_tmp', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
+    impoz_venit_m_data = impoz_venit_m_data_tmp.strftime("%d.%m.%Y")
 
     st.divider()
 
