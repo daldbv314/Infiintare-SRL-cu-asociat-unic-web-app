@@ -127,7 +127,9 @@ def var_dictionary():
         'activ_sec19': activ_sec19,
         'cod_activ_s20': cod_activ_s20,
         'activ_sec20': activ_sec20,
+        'impoz_prof_bool': impoz_prof_bool,
         'impoz_prof': impoz_prof,
+        'impoz_prof_data': impoz_prof_data,
         'ipz1': ipz1,
         'ipz2': ipz2,
         'ipl1': ipl1,
@@ -163,7 +165,9 @@ def var_dictionary():
         'pftL': pftL,
         'pftT': pftT
         
-    }    
+    }
+
+    return var_dict    
 
 def doc01():
     doc01_path = Path.cwd() / "Templates" / "01-Act-constitutiv-(asociat-unic)-template-v2.docx"
@@ -417,7 +421,7 @@ with st.form("Înființare", clear_on_submit=False):
 
     col1, col2, col3, col4 = st.columns(4, gap="small")
     tva_bool = col1.checkbox("TVA")
-    c_a_est = col2.number_input('Cifra de afaceri estimată:', key='c_a_est', min_value=0, label_visibility="visible", help='în LEI')
+    c_a_est = col2.number_input('Cifra de afaceri estimată:', key='c_a_est', min_value=0, max_value=99999999, label_visibility="visible", help='în LEI')
     col1, col2, col3, col4 = st.columns(4, gap="small")
     scop_tva_bool = col1.checkbox("Înregistrare în scopuri de TVA")
     reg_norm_tva_bool = col2.checkbox("Aplicarea regimului normal de TVA")
@@ -430,7 +434,7 @@ with st.form("Înființare", clear_on_submit=False):
 
 if submitted:
         with st.spinner("Se generează documentele..."):
-            clean_data_semn = data_semn.replace('.', '')
+            clean_data_semn = str(data_semn).replace('.', '')
             dsz1 = clean_data_semn[0]
             dsz2 = clean_data_semn[1]
             dsl1 = clean_data_semn[2]
@@ -445,7 +449,7 @@ if submitted:
             else:
                 impoz_prof = ''
             
-            clean_impoz_prof_data = impoz_prof_data.replace('.', '')
+            clean_impoz_prof_data = str(impoz_prof_data).replace('.', '')
             ipz1 = clean_impoz_prof_data[0]
             ipz2 = clean_impoz_prof_data[1]
             ipl1 = clean_impoz_prof_data[2]
@@ -470,7 +474,7 @@ if submitted:
             else:
                 impoz_venit_m = ''
 
-            clean_impoz_venit_m_data = impoz_venit_m_data.replace('.', '')
+            clean_impoz_venit_m_data = str(impoz_venit_m_data).replace('.', '')
             ivz1 = clean_impoz_venit_m_data[0]
             ivz2 = clean_impoz_venit_m_data[1]
             ivl1 = clean_impoz_venit_m_data[2]
@@ -485,14 +489,29 @@ if submitted:
             else:
                 tva = ''
 
-            cae1 = c_a_est[-1]
-            cae2 = c_a_est[-2]
-            cae3 = c_a_est[-3]
-            cae4 = c_a_est[-4]
-            cae5 = c_a_est[-5]
-            cae6 = c_a_est[-6]
-            cae7 = c_a_est[-7]
-            cae8 = c_a_est[-8]
+            cae1 = None
+            cae2 = None
+            cae3 = None
+            cae4 = None
+            cae5 = None
+            cae6 = None
+            cae7 = None
+            cae8 = None
+
+            # Reverse the string to start from the last digit
+            c_a_est_reversed = str(c_a_est)[::-1]
+            # Maximum number of variables (cae1 to cae8)
+            cae_max_length = 8
+            # Dynamically assign digits to the variables
+            for i in range(cae_max_length):
+                var_name = f"var{i+1}"
+                if i < len(c_a_est_reversed):
+                    # Assign the corresponding digit if it exists
+                    globals()[var_name] = int(c_a_est_reversed[i])  # Use globals to create variable
+                else:
+                    # Assign an empty string if there are no more digits
+                    globals()[var_name] = ''
+            # At this point, the variables cae1, cae2, ..., var8 are defined and can be used
 
             if scop_tva_bool:
                 scop_tva = 'X'
