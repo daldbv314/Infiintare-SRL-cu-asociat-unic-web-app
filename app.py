@@ -497,29 +497,21 @@ if submitted:
             else:
                 tva = ''
 
-            cae1 = None
-            cae2 = None
-            cae3 = None
-            cae4 = None
-            cae5 = None
-            cae6 = None
-            cae7 = None
-            cae8 = None
-
             # Reverse the string to start from the last digit
             c_a_est_reversed = str(c_a_est)[::-1]
             # Maximum number of variables (cae1 to cae8)
             cae_max_length = 8
+            cae1 = cae2 = cae3 = cae4 = cae5 = cae6 = cae7 = cae8 = None
             # Dynamically assign digits to the variables
             for i in range(cae_max_length):
-                var_name = f"var{i+1}"
+                var_name = f"cae{i+1}"
                 if i < len(c_a_est_reversed):
                     # Assign the corresponding digit if it exists
                     globals()[var_name] = int(c_a_est_reversed[i])  # Use globals to create variable
                 else:
                     # Assign an empty string if there are no more digits
                     globals()[var_name] = ''
-            # At this point, the variables cae1, cae2, ..., var8 are defined and can be used
+            # At this point, the variables cae1, cae2, ..., cae8 are defined and can be used
 
             if scop_tva_bool:
                 scop_tva = 'X'
