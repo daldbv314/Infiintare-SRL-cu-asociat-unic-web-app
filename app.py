@@ -7,7 +7,9 @@ from pathlib import Path
 from docxtpl import DocxTemplate
 from dotenv import load_dotenv
 from io import BytesIO
+import locale
 
+locale.setlocale(locale.LC_ALL, 'ro_RO')
 
 
 st.set_page_config(
