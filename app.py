@@ -256,7 +256,7 @@ def main():
         st.subheader('Act constitutiv:')
         col1, col2, col3, col4 = st.columns(4, gap="small")
         as1_nume = col1.text_input('Nume Asociat:', value="", key='as1_nume', placeholder='e.g. Popescu', max_chars=None)
-        as1_prenume = col2.text_input('Prenume Asociat:', value="", key='as1_prenume', placeholder='e.g. Popescu', max_chars=None)
+        as1_prenume = col2.text_input('Prenume Asociat:', value="", key='as1_prenume', placeholder='e.g. Ștefan', max_chars=None)
         as1_cetatean = col3.text_input('Cetațean:', value="român", key='as1_cetatean', placeholder='e.g. român')
         as1_data_n_tmp = col4.date_input('Data naștere:', datetime.date.today(), key='as1_data_n_tmp', help=None, format="DD.MM.YYYY", min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100, 1, 1))
         as1_data_n = as1_data_n_tmp.strftime("%d.%m.%Y")
@@ -327,8 +327,8 @@ def main():
 
         st.subheader('Contract de comodat')
         col1, col2, col3, col4 = st.columns(4, gap="small")
-        nr_contr = col1.text_input('Nr. contract comodat', value="", key='nr_contr', placeholder='xx', max_chars=None, help='')
-        per_comod = col2.text_input('Perioada comodat', value="", key='per_comod', placeholder='xx', max_chars=None, help='')
+        nr_contr = col1.text_input('Nr. contract comodat', value="", key='nr_contr', placeholder='99', max_chars=None, help='')
+        per_comod = col2.text_input('Perioada comodat', value="", key='per_comod', placeholder='99', max_chars=None, help='Adaugati doar numarul')
 
         st.divider()
 
