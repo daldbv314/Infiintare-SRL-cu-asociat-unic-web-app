@@ -328,7 +328,7 @@ def main():
         st.subheader('Contract de comodat')
         col1, col2, col3, col4 = st.columns(4, gap="small")
         nr_contr = col1.text_input('Nr. contract comodat', value="", key='nr_contr', placeholder='99', max_chars=None, help='')
-        per_comod = col2.text_input('Perioada comodat', value="", key='per_comod', placeholder='99', max_chars=None, help='Adaugati doar numarul')
+        per_comod = col2.text_input('Perioada comodat', value="", key='per_comod', placeholder='99', max_chars=None, help='Adaugati doar numarul. e.g. 99')
 
         st.divider()
 
